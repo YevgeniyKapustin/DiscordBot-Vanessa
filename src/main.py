@@ -11,7 +11,9 @@ from src.utils.constants import roles_ids
 bot = commands.Bot(intents=Intents.all())
 
 
-bot = commands.Bot(command_prefix='!', intents=Intents.all())
+@bot.event
+async def on_ready():
+    logger.info('Бот запущен')
 
 
 @bot.slash_command(description='Выбор случайной фракции в героях 3')
