@@ -10,4 +10,4 @@ RUN poetry config virtualenvs.create false &&  \
 
 COPY . .
 
-CMD python main.py
+CMD python run.py

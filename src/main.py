@@ -5,7 +5,6 @@ from discord import Intents, ApplicationContext, Option, RawReactionActionEvent
 from discord.ext import commands
 from loguru import logger
 
-from src import config
 from src.utils.constants import roles_ids
 
 bot = commands.Bot(intents=Intents.all())
@@ -93,6 +92,3 @@ async def on_raw_reaction_remove(payload: RawReactionActionEvent):
                     logger.info(
                         f'Удалена роль "{role}" у пользователя {member.name}'
                     )
-
-if __name__ == '__main__':
-    bot.run(config.BOT_TOKEN)
